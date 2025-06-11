@@ -1,0 +1,35 @@
+name: ppo
+class_name: PPO
+
+# Training parameters
+learning_rate: 0.0003
+n_steps: 2048
+batch_size: 64
+n_epochs: 10
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+clip_range_vf: null
+normalize_advantage: true
+ent_coef: 0.0
+vf_coef: 0.5
+max_grad_norm: 0.5
+
+# Network architecture
+policy_hidden_dims: [64, 64]
+value_hidden_dims: [64, 64]
+activation: tanh
+shared_backbone: false
+
+# Optimization
+optimizer: adam
+optimizer_params:
+  betas: [0.9, 0.999]
+  eps: 1e-5
+  weight_decay: 0
+
+# Learning rate scheduler
+scheduler: linear
+scheduler_params:
+  start_factor: 1.0
+  end_factor: 0.1

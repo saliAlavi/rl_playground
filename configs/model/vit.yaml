@@ -1,0 +1,10 @@
+name: vit
+type: pretrained
+backbone: vit_b_16
+pretrained: true
+freeze_backbone: true
+hidden_dims: [512, 256]
+activation: gelu
+dropout: 0.1
+image_size: 224
+patch_size: 16

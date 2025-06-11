@@ -1,0 +1,35 @@
+defaults:
+  - algorithm: dqn
+  - environment: cartpole
+  - model: mlp
+  - _self_
+
+experiment:
+  name: ${algorithm.name}_${environment.name}_${now:%Y%m%d_%H%M%S}
+  seed: 42
+  device: cuda
+  log_interval: 10
+  save_interval: 100
+  eval_episodes: 10
+  max_episodes: 1000
+  checkpoint_dir: experiments/checkpoints/${experiment.name}
+  log_dir: experiments/logs/${experiment.name}
+  plot_dir: experiments/plots/${experiment.name}
+  result_dir: experiments/results/${experiment.name}
+
+wandb:
+  enabled: true
+  project: rl-cartpole
+  entity: null
+  group: ${algorithm.name}
+  tags:
+    - ${algorithm.name}
+    - ${environment.name}
+    - ${model.name}
+  
+hydra:
+  run:
+    dir: ./experiments/hydra/${experiment.name}
+  sweep:
+    dir: ./experiments/hydra/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

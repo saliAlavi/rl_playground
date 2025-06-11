@@ -192,3 +192,26 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# ML/DL specific
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pkl
+*.npy
+*.npz
+
+# Experiments
+experiments/logs/
+experiments/checkpoints/
+experiments/plots/
+experiments/results/
+wandb/
+runs/
+
+# IDE
+.idea/
+*.swp
+*.swo
+.DS_Store

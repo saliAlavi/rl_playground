@@ -1,0 +1,31 @@
+name: dqn
+class_name: DQN
+
+# Training parameters
+learning_rate: 0.0003
+batch_size: 64
+gamma: 0.99
+tau: 0.005
+epsilon_start: 1.0
+epsilon_end: 0.01
+epsilon_decay: 0.995
+target_update_interval: 10
+
+# Replay buffer
+buffer_size: 100000
+min_buffer_size: 1000
+
+# Network architecture
+hidden_dims: [128, 128]
+activation: relu
+
+# Optimization
+optimizer: adam
+optimizer_params:
+  betas: [0.9, 0.999]
+  eps: 1e-8
+  weight_decay: 0
+
+# Learning rate scheduler
+scheduler: null
+scheduler_params: {}

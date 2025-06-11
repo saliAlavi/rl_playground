@@ -1,0 +1,7 @@
+name: mlp
+type: mlp
+hidden_dims: [128, 128]
+activation: relu
+dropout: 0.0
+layer_norm: false
+spectral_norm: false

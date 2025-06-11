@@ -1,0 +1,10 @@
+name: cartpole
+env_id: CartPole-v1
+n_envs: 1
+frame_stack: 1
+normalize_obs: false
+normalize_reward: false
+clip_obs: 10.0
+clip_reward: 10.0
+max_episode_steps: 500
+render_mode: null

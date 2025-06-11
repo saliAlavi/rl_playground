@@ -1,0 +1,10 @@
+name: resnet
+type: pretrained
+backbone: resnet18
+pretrained: true
+freeze_backbone: false
+num_trainable_layers: 2
+hidden_dims: [512, 256]
+activation: relu
+dropout: 0.1
+feature_extract: true
